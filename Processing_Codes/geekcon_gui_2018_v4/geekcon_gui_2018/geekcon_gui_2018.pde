@@ -53,10 +53,10 @@ void setup() {
   printArray(Serial.list());
   //println(Serial.list());
   if (Serial.list().length>0) {
-    tornado_serial = new Serial(this, Serial.list()[1], 57600);
+    tornado_serial = new Serial(this, Serial.list()[0], 57600);
     tornado_serial.bufferUntil(10); // 10 == lf
     if (Serial.list().length>1) {
-      wheel_serial = new Serial(this, Serial.list()[0], 9600);
+      wheel_serial = new Serial(this, Serial.list()[1], 9600);
       wheel_serial.bufferUntil(10); // 10 == lf
     }
   }
